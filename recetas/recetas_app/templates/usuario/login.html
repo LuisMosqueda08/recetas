@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Login
+{% endblock %}
+
+{% block content %}
+<div class="col-12 col-lg-6 offset-lg-3">
+    <h1>Login</h1>
+    <p class="text-danger">{{ error }}</p>
+    <p class="text-success">{{ mensaje }}</p>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username" class="form-label">Nombre de usuario:</label>
+            <input type="text" name="username" class="form-control" id="username" name="username" required value="{{ username|default:'' }}">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <input type="password" name="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-crear-cuenta">Iniciar sesión</button>
+    </form>
+<p style="margin-top: 5px">¿No tienes cuenta? <a href="{% url 'registro' %}">Registrate aquí</a></p>
+</div>
+{% endblock %}
