@@ -1,3 +1,9 @@
+html{
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 100px;
+}
+
 body{
     background-color: #F5EEDC;    
     height: 100%;
@@ -12,7 +18,7 @@ footer{
     width: 100vw;
     background-color: #4E342E;
     color: #F5EEDC;
-    padding: 2rem;
+    padding: 1rem;
     font-weight: 600;
 }
 
@@ -61,7 +67,7 @@ header .navbar-nav{
 }
 
 .navbar-brand{
-    max-width: 150px;
+    max-width: 100px;
 }
 
 .btn-registro, .btn-crear-cuenta{
@@ -86,4 +92,21 @@ h1{
     color: 	#7B3F3F;
     border: #BFA46F;
     letter-spacing: 0.05em
+}
+
+.card .card-img-top {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    height: auto;
+}
+
+.lista-ingredientes{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.card{
+    margin-bottom: 50px;
 }

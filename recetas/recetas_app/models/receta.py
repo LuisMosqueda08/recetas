@@ -6,7 +6,8 @@ class Receta(models.Model):
     usuario = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     created_at = models.DateField(auto_created=True)
     updated_at = models.DateField(auto_now=True)
-
+    imagen = models.ImageField(null=True)
+    slug = models.SlugField(null=True)
 
 class Ingrediente(models.Model):
     UNIDADES = [
