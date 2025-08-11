@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block titulo %}{{ receta.nombre }}{% endblock %}
+
+{% block content %}
+    <h1>{{ receta.nombre }}</h1>
+
+    <figure class="figure">
+  <img src="{{ receta.imagen.url }}" class="figure-img img-fluid rounded" alt="{{ receta.nombre }}">
+  <figcaption class="figure-caption">{{ receta.nombre }}</figcaption>
+</figure>
+
+    <h3>Ingredientes</h3>
+    <ul>
+    {% for ingrediente in receta.ingredientes.all %}
+        <li>{{ ingrediente }}</li>
+    {% endfor %}
+    </ul>
+        <h3>Pasos</h3>
+
+    {% for paso in receta.pasos.all %}
+        <h5>Paso {{ paso.numero }}</h5>
+        <p>{{ paso.explicacion }}</p>
+    {% endfor %}
+
+
+{% endblock %}

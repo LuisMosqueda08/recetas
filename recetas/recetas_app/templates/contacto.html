@@ -5,5 +5,24 @@
 {% endblock %}
 
 {% block content %}
+
+
+    <div class="col-12 col-lg-6 offset-lg-3">
     <h1>Contacto</h1>
+    <p class="text-danger">{{ error }}</p>
+    <p class="text-success">{{ mensaje }}</p>
+    <form action="{% url 'contacto' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username" class="form-label">email:</label>
+            <input type="email" name="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Mensaje:</label>
+            <textarea class="form-control" name="mensaje" placeholder="Comentarios" id="floatingTextarea2" style="height: 100px" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-crear-cuenta">Enviar</button>
+    </form>
+</div>
+
 {% endblock %}

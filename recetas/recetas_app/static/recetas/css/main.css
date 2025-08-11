@@ -110,3 +110,7 @@ h1{
 .card{
     margin-bottom: 50px;
 }
+
+.figure img{
+    height: 500px;
+}

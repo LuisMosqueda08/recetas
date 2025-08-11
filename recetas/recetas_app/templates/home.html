@@ -21,58 +21,7 @@
             {% endfor %}
            </ul>
       </div>
-        <a><button class="btn btn-primary btn-block" style="width: 100%">Ver más</button></a>
-    </div>
-  </div>
-      {% endfor %}
-
-{% for receta in recetas %}
-          <div class="col">
-    <div class="card">
-      <img src="{{ receta.imagen.url }}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{ receta.nombre }}</h5>
-           <ul class="lista-ingredientes">
-                {% for ingrediente in receta.ingredientes.all %}
-                <li>{{ ingrediente.nombre | truncatechars:35 }}</li>
-            {% endfor %}
-           </ul>
-      </div>
-        <a><button class="btn btn-primary btn-block" style="width: 100%">Ver más</button></a>
-    </div>
-  </div>
-      {% endfor %}
-
-{% for receta in recetas %}
-          <div class="col">
-    <div class="card">
-      <img src="{{ receta.imagen.url }}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{ receta.nombre }}</h5>
-           <ul class="lista-ingredientes">
-                {% for ingrediente in receta.ingredientes.all %}
-                <li>{{ ingrediente.nombre | truncatechars:35 }}</li>
-            {% endfor %}
-           </ul>
-      </div>
-        <a><button class="btn btn-primary btn-block" style="width: 100%">Ver más</button></a>
-    </div>
-  </div>
-      {% endfor %}
-
-{% for receta in recetas %}
-          <div class="col">
-    <div class="card">
-      <img src="{{ receta.imagen.url }}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{ receta.nombre }}</h5>
-           <ul class="lista-ingredientes">
-                {% for ingrediente in receta.ingredientes.all %}
-                <li>{{ ingrediente.nombre | truncatechars:35 }}</li>
-            {% endfor %}
-           </ul>
-      </div>
-        <a><button class="btn btn-primary btn-block" style="width: 100%">Ver más</button></a>
+        <a href="{% url 'receta' slug=receta.slug %}"><button class="btn btn-primary btn-block" style="width: 100%">Ver más</button></a>
     </div>
   </div>
       {% endfor %}

@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 
-from recetas_app.views import home_views, user_views
+from recetas_app.views import home_views, user_views, recetas_view
 
 urlpatterns = [
     path('', home_views.home, name='home'),
@@ -28,6 +28,6 @@ urlpatterns = [
     path('login/', user_views.login, name='login'),
     path('logout/', user_views.logout, name='logout'),
     path('admin/', admin.site.urls),
-    path('receta/<slug:slug>/', user_views.receta, name='receta'),
+    path('receta/<slug:slug>/', recetas_view.receta, name='receta'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
